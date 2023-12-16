@@ -21,7 +21,7 @@ include	$(TWLSDK_ROOT)/build/buildtools/commondefs
 #----------------------------------------------------------------------------
 
 SUBDIRS		=	launcher MachineSettings PictoChat \
-				#DS_DownloadPlay
+				#DS_DownloadPlay 		<-- No mbloader lib
 
 #----------------------------------------------------------------------------
 

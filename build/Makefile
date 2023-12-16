@@ -22,10 +22,15 @@ include	$(TWLIPL_ROOT)/build/buildtools/commondefs
 #----------------------------------------------------------------------------
 
 SUBDIRS =	\
-            tools \
-            libraries \
-			nandfirm \
-			nand_formatter \
+#           tools \				<-- Not needed unless building nandfirm
+#           libraries \
+#			nandfirm \			<-- Don't think this will work
+#			nand_formatter \	<-- Using outdated FATFS library. I'll see
+#									if I can build it sometime later but
+#									right now it looks like we're missing:
+#									rtfs.h, and devices/*.h
+#
+#									Might find in twl_wrapsdk?
 			libraries_sysmenu\
 			systemmenu_RED
 

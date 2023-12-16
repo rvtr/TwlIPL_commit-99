@@ -1,0 +1,18 @@
+/******************************************************************************
+	NINTENDO NITRO-System Maya Plugin
+
+	File:         NNS_GetSupportMayaVer.mel
+	Description:  get the version of Maya which this plugin supports (7.0)
+	Date:         2005/05/10
+	Author:       Takashi Endo
+
+	Copyright 2003-2008 Nintendo. All rights reserved.
+******************************************************************************/
+
+/******************************************************************************
+	main
+******************************************************************************/
+global proc string NNS_GetSupportMayaVer()
+{
+	return "7.0";
+}

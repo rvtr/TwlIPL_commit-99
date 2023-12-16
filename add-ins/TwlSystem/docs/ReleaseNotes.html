@@ -1,0 +1,803 @@
+<html>
+<head>
+<title>NITRO-System 2008年04月08日版 リリースノート</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-style-type" content="text/css" />
+<style type="text/css">
+<!--
+    
+H1
+{
+    font-weight         : bold;
+    font-size           : 250%;
+    text-align          : left;
+    color               : #46f;
+    margin              : 0em 0em 0.5em 0em;
+}
+
+H2
+{
+    font-weight         : bold;
+    font-size           : 150%;
+    text-align          : left;
+    margin              : 2em 0em 0.5em 0em;
+    padding-top         : 8pt;
+    border-top-style    : double;
+    border-top-width    : 3px;
+}
+
+H3
+{
+    font-weight         : bold;
+    font-size           : 120%;
+    margin              : 1em 0em 0.5em 0em;
+    padding-top         : 8pt;
+    border-top-style    : solid;
+    border-top-width    : 1px;
+}
+
+H4
+{
+    font-weight         : normal;
+    font-size           : 100%;
+    margin              : 0em 0em 0em 0.5em;
+}
+
+DIV.date
+{
+    font-size           : normal;
+    text-align          : right;
+    margin              : 0pt 0pt 12pt 0pt;
+}
+
+DIV.licence
+{
+    padding: 0em;
+    margin: 1em;
+    border-style : solid;
+    border-width : 1px;
+}
+
+DIV.caution
+{
+    padding: 0.5em;
+    margin: 1em;
+    border-style : solid;
+    border-width : 1px;
+}
+
+P
+{
+    font-size           : normal;
+    margin              : 0em 1em 0.5em 1em;
+    line-height         : 150%;
+}
+
+PRE
+{
+    font-size           : normal;
+    margin              : 1em;
+    line-height         : 120%;
+}
+
+DT
+{
+    margin              : 1em 0em 0em 1em;
+}
+DD
+{
+    margin-left         : 3em;
+}
+UL
+{
+    margin              : 0em 0em 1em 1em;
+    padding             : 0;
+}
+LI
+{
+    margin              : 0em 0em 0em 1em;
+}
+
+-->
+</style>
+</head>
+<body>
+
+<h1>NITRO-System 2008年04月08日版 リリースノート</h1>
+
+<h2>はじめに</h2>
+<p>本パッケージは、NINTENDO NITRO-System 2008年04月08日版です。</p>
+
+<p>  
+NINTENDO NITRO-System は、ニンテンドーＤＳ 用ゲームソフトの開発に使用できる基本的なツール＆ライブラリ群の総称です。
+この文書は、NINTENDO NITRO-Systemのリリースノートです。
+</p>
+
+<div class="caution">
+<p>
+  このパッケージには、以下の制限事項があります。
+</p>
+<ul>
+  <li>ドキュメントについて、TWL-SDKへの対応に伴う修正が十分ではありません。</li>
+  <li>本パッケージに含まれる3DCGツール用プラグインは Maya プラグインのみ対応しています。3ds Max 及び SOFTIMAGE|XSI プラグインは今後対応する予定です。</li>
+</ul>
+</div>
+
+
+<h2>目次</h2>
+<ul style="list-style-type: none;">
+<li><a href="#subject_package">パッケージの内容</a></li>
+<li><a href="#subject_software_requirement">ソフトウェア要件</a></li>
+<li><a href="#subject_changelog_20080408">2008年04月08日版での変更点</a></li>
+
+<li><a href="#subject_knownissues">既知の問題点</a></li>
+<li><a href="#subject_info">NITRO-System に関する情報</a></li>
+<li><a href="#subject_note">注意事項</a></li>
+</ul>
+
+
+
+<h2 id="subject_package">パッケージの内容</h2>
+
+<p>
+NINTENDO NITRO-System パッケージには、下記に示すライブラリやツールが含まれています。
+</p>
+
+<ul>
+  <li>Foundation ライブラリ（Fnd ライブラリ）</li>
+  <li>Graphics Foundation ライブラリ（Gfd ライブラリ）</li>
+  <li>２Ｄグラフィックスライブラリ（G2D ライブラリ）</li>
+  <li>３Ｄグラフィックスライブラリ（G３D ライブラリ）</li>
+  <li>NITRO-Composer（Sound ライブラリ）</li>
+  <li>Multiple Channel Stream ライブラリ（mcs ライブラリ）</li>
+  <li>３Ｄマテリアルエディタ（3DMaterialEdtior）</li>
+  <li>NITRO-SoundMaker</li>
+  <li>NITRO-Player</li>
+  <li>NITRO-Viewer</li>
+  <li>各種データコンバータ</li>
+  <li>各種CGツール用のプラグイン</li>
+  <li>各種マニュアル及び関数リファレンス</li>
+</ul>
+
+<h3>NITRO-System パッケージの展開</h3>
+<p>
+NINTENDO NITRO-System のパッケージをローカルディスクの任意の場所に展開します。
+NINTENDO NITRO-System のパッケージはzip 形式で圧縮されていますので、各種解凍ツールを用いて展開してください。
+パッケージを展開しますと、NitroSystem という名前のディレクトリが作成されます。
+</p>
+<p>
+NINTENDO NITRO-Systemを使用する場合には、環境変数NITROSYSTEM_ROOTが設定されている必要があります。 
+環境変数NITROSYSTEM_ROOT に、展開されたディレクトリNitroSystem の絶対パスを設定してください。
+環境変数NITROSYSTEM_ROOT が指定されていない場合には、C:\NitroSystem が設定されたものとして扱われます。
+</p>
+
+
+<h2 id="subject_software_requirement">ソフトウェア要件</h2>
+<ul>
+  <li>TWL-SDK5.0 FC plusが必要です。</li>
+  <li>IS-TWL-DEBUGGERバージョン0.47以降または、IS-NITRO-DEBUGGERバージョン1.78以降が必要です。</li>
+  <li>各種ライブラリを使用するには、CodeWarrior for NINTENDO DS v2.0 SP2 Patch2以降が必要です。</li>
+  <li>NITRO-SoundMakerを使用するには、.NET framework 1.1が必要です。</li>
+  <li>Photoshopプラグインを使用するには、Windows版 Adobe Photoshop (CS / CS2 / CS3 のいずれか)が必要です。</li>
+  <li>Mayaプラグインを使用するには、Windows版 Maya (7.0 / 8.0 / 8.5 / 2008 のいずれか)が必要です。</li>
+  <li>3ds Maxプラグインを使用するには、3ds Max (8.0 / 9.0 / 2008 のいずれか)が必要です。</li>
+  <li>SOFTIMAGE|XSIプラグインを使用するには、SOFTIMAGE|XSI (5.11 / 6.02 / 6.5 のいずれか)が必要です。</li>
+</ul>
+
+
+<h2 id="subject_changelog_20080408">2008年04月08日版での変更点</h2>
+<h3>追加・変更された機能</h3>
+<h4>開発環境全般</h4>
+<ul style="list-style-type:none;">
+<li><a href="#note_76-D01">ノート 76-D01:  TWL-SDK対応</a></li>
+<li><a href="#note_76-D02">ノート 76-D02:  パッケージ構成の変更</a></li>
+<li><a href="#note_76-D03">ノート 76-D03:  「クイックスタート」マニュアルの追加</a></li>
+</ul>
+<h4>Foundationライブラリ</h4>
+<ul style="list-style-type:none;">
+<li><a href="#note_76-F01">ノート 76-F01:  (マニュアル) 改訂履歴の書式変更とSDKに関する記載の修正</a></li>
+</ul>
+<h4>GraphicsFoundationライブラリ</h4>
+<ul style="list-style-type:none;">
+<li><a href="#note_76-G01">ノート 76-G01:  (マニュアル) マニュアルの書式の見直し</a></li>
+</ul>
+<h4>G2Dライブラリ</h4>
+<ul style="list-style-type:none;">
+<li><a href="#note_76-B01">ノート 76-B01:  (マニュアル) 改訂履歴の書式変更と全体の校正</a></li>
+<li><a href="#note_76-B02">ノート 76-B02:  (マニュアル) Xerces-C++のライセンスに関する表記を変更</a></li>
+</ul>
+<h4>G3Dライブラリ</h4>
+<ul style="list-style-type:none;">
+<li><a href="#note_76-R01">ノート 76-R01:  (マニュアル) 改訂履歴の書式変更</a></li>
+<li><a href="#note_76-R02">ノート 76-R02:  (マニュアル) Xerces-C++のライセンスに関する表記を変更</a></li>
+</ul>
+<h4>NITRO-Composer</h4>
+<ul style="list-style-type:none;">
+<li><a href="#note_76-S01">ノート 76-S01:  (マニュアル) 改訂履歴の書式変更とページヘッダの修正</a></li>
+</ul>
+<h4>Muitiple Channel Stream</h4>
+<ul style="list-style-type:none;">
+<li><a href="#note_76-C01">ノート 76-C01:  (マニュアル) 改訂履歴の書式変更</a></li>
+<li><a href="#note_76-C02">ノート 76-C02:  (ライブラリ, mcsサーバ) TWL対応</a></li>
+</ul>
+<h4>NITRO-Viewer</h4>
+<ul style="list-style-type:none;">
+<li><a href="#note_76-V01">ノート 76-V01:  (マニュアル) 改訂履歴の書式変更、および副題とページヘッダの修正</a></li>
+</ul>
+<h4>NITRO-Player</h4>
+<ul style="list-style-type:none;">
+<li><a href="#note_76-P01">ノート 76-P01:  (マニュアル) 改訂履歴の書式変更とページヘッダの修正</a></li>
+</ul>
+<h4>NITRO-SoundMaker</h4>
+<ul style="list-style-type:none;">
+<li><a href="#note_76-K01">ノート 76-K01:  (マニュアル) 改訂履歴の書式変更とページヘッダの修正</a></li>
+</ul>
+<h4>3Dマテリアルエディタ</h4>
+<ul style="list-style-type:none;">
+<li><a href="#note_76-M01">ノート 76-M01:  (マニュアル) 改訂履歴の書式変更と表題と副題を修正</a></li>
+</ul>
+<h4>Photoshopプラグイン</h4>
+<ul style="list-style-type:none;">
+<li><a href="#note_76-H01">ノート 76-H01:  (マニュアル) 改訂履歴の書式変更と副題を修正</a></li>
+</ul>
+<h4>Mayaプラグイン</h4>
+<ul style="list-style-type:none;">
+<li><a href="#note_76-Y01">ノート 76-Y01:  (マニュアル) 改訂履歴の書式変更と表題と副題を修正</a></li>
+</ul>
+<h4>3ds Max プラグイン</h4>
+<ul style="list-style-type:none;">
+<li><a href="#note_76-X01">ノート 76-X01:  (マニュアル) 改訂履歴の書式変更と表題と副題を修正</a></li>
+</ul>
+<h4>SOFTIMAGE|XSI プラグイン</h4>
+<ul style="list-style-type:none;">
+<li><a href="#note_76-I01">ノート 76-I01:  (マニュアル) 改訂履歴の書式変更と表題と副題を修正</a></li>
+</ul>
+<h3>不具合修正</h3>
+<h4>Muitiple Channel Stream</h4>
+<ul style="list-style-type:none;">
+<li><a href="#note_76-C03">ノート 76-C03:  (ライブラリ) ファイル入出力関数に関する不具合修正</a></li>
+</ul>
+<h3 id="note_76-D01">ノート 76-D01:  TWL-SDK対応</h3>
+<p>TWL-SDKに対応しました。
+対応するSDKは、SDK 5.0 FC plus です。
+</p>
+<h3 id="note_76-D02">ノート 76-D02:  パッケージ構成の変更</h3>
+<p>これまで、NITRO-Systemのライブラリ、NITRO-Viewer、NITRO-SoundMaker、3DToolsは
+別々のパッケージでリリースされていましたが、
+これら全てを１つのパッケージにまとめました。
+</p>
+<p>NITRO-Viewer、NITRO-SoundMaker、3DToolsはそれぞれ、
+$NitroSystem/tools ディレクトリ以下に格納されています。
+</p>
+<h3 id="note_76-D03">ノート 76-D03:  「クイックスタート」マニュアルの追加</h3>
+<p>NITRO-System導入時のセットアップの仕方をまとめた
+「クイックスタート」マニュアル（$NitroSystem/docs/QuickStart.pdf）
+を追加しました。
+</p>
+<h3 id="note_76-F01">ノート 76-F01:  (マニュアル) 改訂履歴の書式変更とSDKに関する記載の修正</h3>
+<p>下記に示すpdfマニュアルの改訂履歴の書式を変更しました。
+またSDKに関する記載をNITRO-SDKからTWL-SDKに修正しました。
+</p>
+<ul><li> Allocator.pdf
+</li>
+<li> ArchiveFormat.pdf
+</li>
+<li> ArchiveManager.pdf
+</li>
+<li> Archiver.pdf
+</li>
+<li> MemoryManager.pdf
+</li>
+</ul>
+<h3 id="note_76-G01">ノート 76-G01:  (マニュアル) マニュアルの書式の見直し</h3>
+<p>下記に示すpdfマニュアルの改訂履歴の書式を変更し、ドキュメントの副題を記載しました。
+また、改ページの位置を調整し、マニュアルが見やすくなるようにしました。
+</p>
+<ul><li> VramManager.pdf
+</li>
+<li> VramTransferManager.pdf
+</li>
+</ul>
+<h3 id="note_76-B01">ノート 76-B01:  (マニュアル) 改訂履歴の書式変更と全体の校正</h3>
+<p>下記に示すpdfマニュアルの改訂履歴の書式を変更し、全体の校正を行いました。
+</p>
+<ul><li> BuildNENR_Manual.pdf
+</li>
+<li> fontcvtr_Manual.pdf
+</li>
+<li> fontcvtrc_Manual.pdf
+</li>
+<li> g2dcvtr_Manual.pdf
+</li>
+<li> NNS_G2DRuntime-BinaryFormat.pdf
+</li>
+</ul>
+<h3 id="note_76-B02">ノート 76-B02:  (マニュアル) Xerces-C++のライセンスに関する表記を変更</h3>
+<p>下記に示すpdfマニュアルにおいて、Xerces-C++のライセンスに関する表記を変更しました。
+</p>
+<ul><li> fontcvtr_Manual.pdf
+</li>
+<li> fontcvtrc_Manual.pdf
+</li>
+</ul>
+<h3 id="note_76-R01">ノート 76-R01:  (マニュアル) 改訂履歴の書式変更</h3>
+<p>下記に示すpdfマニュアルの改訂履歴の書式を変更しました。
+</p>
+<ul><li> G3D_BinaryFormat.pdf
+</li>
+<li> g3dcvtr_UsersManual.pdf
+</li>
+</ul>
+<h3 id="note_76-R02">ノート 76-R02:  (マニュアル) Xerces-C++のライセンスに関する表記を変更</h3>
+<p>g3dcvtr_UsersManual.pdfにおいて、Xerces-C++のライセンスに関する表記を変更しました。
+</p>
+<h3 id="note_76-S01">ノート 76-S01:  (マニュアル) 改訂履歴の書式変更とページヘッダの修正</h3>
+<p>下記のpdfマニュアルにおいて、改訂履歴の書式変更とページヘッダの修正を行いました。
+</p>
+<ul><li> NITRO_Composer_BankDataManual.pdf
+</li>
+<li> NITRO_Composer_QuickStartGuide.pdf
+</li>
+<li> NITRO_Composer_SequenceDataManual.pdf
+</li>
+<li> NITRO_Composer_SoundArchiveManual.pdf
+</li>
+<li> NITRO_Composer_SoundDesignerGuide.pdf
+</li>
+<li> NITRO_Composer_SoundProgrammerGuide.pdf
+</li>
+<li> NITRO_Composer_SoundSystemManual.pdf
+</li>
+<li> NITRO_Composer_SoundToolManual.pdf
+</li>
+</ul>
+<h3 id="note_76-C01">ノート 76-C01:  (マニュアル) 改訂履歴の書式変更</h3>
+<p>mcs.pdfの改訂履歴の書式を変更しました。
+</p>
+<h3 id="note_76-C02">ノート 76-C02:  (ライブラリ, mcsサーバ) TWL対応</h3>
+<p>TWL-TSボードへの対応を行いました。
+</p>
+<h3 id="note_76-C03">ノート 76-C03:  (ライブラリ) ファイル入出力関数に関する不具合修正</h3>
+<p>ファイル入出力関数において、MCSサーバとの接続状態によっては、無限ループに陥ってしまう不具合がありました。
+この不具合を修正しました。
+</p>
+<h3 id="note_76-V01">ノート 76-V01:  (マニュアル) 改訂履歴の書式変更、および副題とページヘッダの修正</h3>
+<p>下記のpdfマニュアルの改訂履歴の書式を変更しました。
+また、ドキュメントの副題とページヘッダを修正しました。
+</p>
+<ul><li> NitroViewer.pdf
+</li>
+<li> NITRO-ViewerController.pdf
+</li>
+</ul>
+<h3 id="note_76-P01">ノート 76-P01:  (マニュアル) 改訂履歴の書式変更とページヘッダの修正</h3>
+<p>NITRO_Player_UserManual.pdfにおいて、改訂履歴の変更とページヘッダの修正を行いました。
+</p>
+<h3 id="note_76-K01">ノート 76-K01:  (マニュアル) 改訂履歴の書式変更とページヘッダの修正</h3>
+<p>NITRO-SoundMaker_UserManual.pdfにおいて、改訂履歴の書式変更とページヘッダの修正を行いました。
+</p>
+<h3 id="note_76-M01">ノート 76-M01:  (マニュアル) 改訂履歴の書式変更と表題と副題を修正</h3>
+<p>NNS_3DMaterialEditor.pdfの改訂履歴の書式を変更しました。
+また、ドキュメントの表題と副題を修正しました。
+</p>
+<h3 id="note_76-H01">ノート 76-H01:  (マニュアル) 改訂履歴の書式変更と副題を修正</h3>
+<p>NITRO_PhotoshopPlugin.pdfの改訂履歴の書式を変更しました。
+また、ドキュメントの副題を修正しました。
+</p>
+<h3 id="note_76-Y01">ノート 76-Y01:  (マニュアル) 改訂履歴の書式変更と表題と副題を修正</h3>
+<p>NITRO_MayaPlugin.pdfの改訂履歴の書式を変更しました。
+また、ドキュメントの表題と副題を修正しました。
+</p>
+<h3 id="note_76-X01">ノート 76-X01:  (マニュアル) 改訂履歴の書式変更と表題と副題を修正</h3>
+<p>NITRO_MaxPlugin.pdfの改訂履歴の書式を変更しました。
+また、ドキュメントの表題と副題を修正しました。
+</p>
+<h3 id="note_76-I01">ノート 76-I01:  (マニュアル) 改訂履歴の書式変更と表題と副題を修正</h3>
+<p>NITRO_SoftimageXSI_Plugin.pdfの改訂履歴の書式を変更しました。
+また、ドキュメントの表題と副題を修正しました。
+</p>
+
+
+
+<h2 id="subject_knownissues">既知の問題点</h2>
+
+<ul style="list-style-type:none;">
+<li><a href="#knownissues_00-R01">[G3Dライブラリ]  (ライブラリ) テクスチャブロックのサイズの制限</a></li>
+<li><a href="#knownissues_00-R02">[G3Dライブラリ]  (ライブラリ) スケールを含むジョイントアニメーションをブレンドした場合の不具合</a></li>
+<li><a href="#knownissues_00-C01">[Muitiple Channel Stream]  (MCSサーバ) TWL TSボードでの動作について</a></li>
+<li><a href="#knownissues_00-V01">[NITRO-Viewer]  ３Ｄプレビューについて</a></li>
+<li><a href="#knownissues_00-V02">[NITRO-Viewer]  動作環境について</a></li>
+<li><a href="#knownissues_00-P01">[NITRO-Player]  ストリーム再生の音途切れ</a></li>
+<li><a href="#knownissues_00-P02">[NITRO-Player]  実機側NITRO-Playerの起動失敗</a></li>
+<li><a href="#knownissues_00-K01">[NITRO-SoundMaker]  instrumentリージョンが、読み込み時に結合される不具合</a></li>
+</ul>
+<h3 id="knownissues_00-R01">[G3Dライブラリ]  (ライブラリ) テクスチャブロックのサイズの制限</h3>
+<p>.nsbmd, .nsbtxファイルが持つテクスチャブロックのサイズの上限は、524272バイトになります。
+つまり、512キロバイトには16バイト足りないサイズになります。
+これは、VRAMキー内部のサイズ部が15ビットのフィールドを4ビット左シフトしたものであることが原因となっています。
+</p>
+<h3 id="knownissues_00-R02">[G3Dライブラリ]  (ライブラリ) スケールを含むジョイントアニメーションをブレンドした場合の不具合</h3>
+<p>MayaにおけるSSC(Segment Scale Compensate)を使用したモデルに対して、
+スケール(特に強いスケールがかかったもの)アニメーションを含む複数のアニメーションをブレンドさせた場合、
+ブレンド後のスケールが不適切になることがあります。
+この問題に対しては、以下のような対応策があります。
+</p>
+<ul><li> スケールを含むアニメーションのブレンドを行なう場合は、MayaのSSCを使用しないモデルを使う。
+</li>
+<li> それができない場合は、あまり強いスケールがかからないアニメーションをブレンドするようにする。
+</li>
+</ul>
+<h3 id="knownissues_00-C01">[Muitiple Channel Stream]  (MCSサーバ) TWL TSボードでの動作について</h3>
+<p>現在のMCSサーバは、TWL TSボードに対して、srlファイルの読み込み、および通信が正しく動作しない場合があります。
+正しく動作していないと思われる場合は、正しく動作するまでsrlファイルの読み込み等を何度か試行してみてください。
+</p>
+<h3 id="knownissues_00-V01">[NITRO-Viewer]  ３Ｄプレビューについて</h3>
+<ul><li> マテリアルのテクスチャ変換行列のST値の指定には対応していません。
+</li>
+<li> ima, itaアニメーションデータの小数フレームに対する線形補間については未対応です。元アニメーションデータに小数フレームに対する線形補間属性（interpolation = linear の状態）が設定されていたとしても、小数フレームを切り捨てて整数フレームとして扱って再生します。
+</li>
+</ul>
+<h3 id="knownissues_00-V02">[NITRO-Viewer]  動作環境について</h3>
+<ul><li>TWL TSボードに対して、ビューアが正しく起動しない場合があります。
+ビューアの起動タイトルが正しく表示されない場合には、正しく動作するまでビューアの起動を何度か試行してみてください。
+</li>
+</ul>
+<h3 id="knownissues_00-P01">[NITRO-Player]  ストリーム再生の音途切れ</h3>
+<p>NITRO-Playerでのストリーム再生は、実際にはROMからリアルタイムにデータをロードするものを、PCから転送することで実現しています。従って、ストリーム再生中に音の途切れが生じる場合があります。特にADPCMデータの再生時には、顕著に発生します。
+</p>
+<p>また逆に、NITRO-Player上で音の途切れが発生しないとしても、ゲーム中での再生時に音の途切れが発生しない保証にはなりませんので、注意してください。
+</p>
+<p>ストリーム再生の確認には、SoundPlayerのご利用をお勧めします。
+</p>
+<h3 id="knownissues_00-P02">[NITRO-Player]  実機側NITRO-Playerの起動失敗</h3>
+<p>TWL TSボードに対して、実機側NITRO-Playerが正しく起動しない場合があります。
+正しく動作していないと思われる場合は、正しく動作するまでビューアの起動を何度か試行してみてください。
+</p>
+<h3 id="knownissues_00-K01">[NITRO-SoundMaker]  instrumentリージョンが、読み込み時に結合される不具合</h3>
+<p>以下の３つの条件を満たしたとき、最後の２つのリージョンが読み込み時に１つのリージョンに結合されてしまう不具合があります。
+</p>
+<ul><li> リージョンが９個以上
+</li>
+<li> 最後の２つのリージョンの中身が全く同じ
+</li>
+<li> 最後のリージョンの幅が１
+</li>
+</ul>
+<p>ただし、結合される前と後とで、出力されるデータや音に、違いはありません。
+</p>
+
+
+
+
+<h2 id="subject_info">NITRO-System に関する情報</h2>
+
+<p>
+NINTENDO NITRO-System に関する情報は、NITRO-System ソースツリーのdocs ディレクトリの中に収められています。
+まずは、下記の文書からご覧ください。
+</p>
+
+<ul>
+  
+  <li>クイックスタート (<a href="QuickStart.pdf">QuickStart.pdf</a>)</li>
+<p>
+NITRO-System のセットアップ方法と、
+NITRO-System ライブラリとデモプログラムをビルドする為の手順について説明しています。
+</p>
+
+<li>オーバービュー</li>
+<p>
+NITRO-Systemに関する概要を説明しています。
+</p>
+<ul>
+  <li>NITRO-System オーバービュー (<a href="Overview/NITRO-System-Overview.pdf">NITRO-System-Overview.pdf</a>)</li>
+  <li>G2Dライブラリ オーバービュー (<a href="Overview/G2D_Overview.pdf">G2D_Overview.pdf</a>)</li>
+  <li>G3Dライブラリ オーバービュー (<a href="Overview/G3D_Overview.pdf">G3D_Overview.pdf</a>)</li>
+  <li>NITRO-Composer オーバービュー (<a href="Overview/NITRO_Composer_Overview.pdf">NITRO_Composer_Overview.pdf</a>)</li>
+</ul>
+
+
+<li>更新履歴</li>
+<p>
+  以前のバージョンまでの変更点が記載されています。
+</p>
+<ul>
+<li>開発環境全般 更新履歴 (<a href="ChangeLog/DevelopmentEnvironment_ChangeLog.html">DevelopmentEnvironment_ChangeLog.html</a>)</li>
+<li>Foundationライブラリ 更新履歴 (<a href="ChangeLog/Foundation_ChangeLog.html">Foundation_ChangeLog.html</a>)</li>
+<li>GraphicsFoundationライブラリ 更新履歴 (<a href="ChangeLog/GraphicsFoundation_ChangeLog.html">GraphicsFoundation_ChangeLog.html</a>)</li>
+<li>G2Dライブラリ 更新履歴 (<a href="ChangeLog/G2D_ChangeLog.html">G2D_ChangeLog.html</a>)</li>
+<li>G3Dライブラリ 更新履歴 (<a href="ChangeLog/G3D_ChangeLog.html">G3D_ChangeLog.html</a>)</li>
+<li>NITRO-Composer 更新履歴 (<a href="ChangeLog/NITRO_Composer_ChangeLog.html">NITRO_Composer_ChangeLog.html</a>)</li>
+<li>Muitiple Channel Stream 更新履歴 (<a href="ChangeLog/mcs_ChangeLog.html">mcs_ChangeLog.html</a>)</li>
+<li>NITRO-Viewer 更新履歴 (<a href="ChangeLog/NITRO_Viewer_ChangeLog.html">NITRO_Viewer_ChangeLog.html</a>)</li>
+<li>NITRO-Player 更新履歴 (<a href="ChangeLog/NITRO_Player_ChangeLog.html">NITRO_Player_ChangeLog.html</a>)</li>
+<li>NITRO-SoundMaker 更新履歴 (<a href="ChangeLog/NITRO_SoundMaker_ChangeLog.html">NITRO_SoundMaker_ChangeLog.html</a>)</li>
+<li>3Dマテリアルエディタ 更新履歴 (<a href="ChangeLog/3DMaterialEditor_ChangeLog.html">3DMaterialEditor_ChangeLog.html</a>)</li>
+<li>Photoshopプラグイン 更新履歴 (<a href="ChangeLog/NITRO_Photoshop_Plugin_ChangeLog.html">NITRO_Photoshop_Plugin_ChangeLog.html</a>)</li>
+<li>Mayaプラグイン 更新履歴 (<a href="ChangeLog/NITRO_Maya_Plugin_ChangeLog.html">NITRO_Maya_Plugin_ChangeLog.html</a>)</li>
+<li>3ds Max プラグイン 更新履歴 (<a href="ChangeLog/NITRO_3dsmax_Plugin_ChangeLog.html">NITRO_3dsmax_Plugin_ChangeLog.html</a>)</li>
+<li>SOFTIMAGE|XSI プラグイン 更新履歴 (<a href="ChangeLog/NITRO_XSI_Plugin_ChangeLog.html">NITRO_XSI_Plugin_ChangeLog.html</a>)</li>
+<li>NITRO中間ファイルフォーマット 更新履歴 (<a href="ChangeLog/NITRO_Intermediate_File_Format_ChangeLog.html">NITRO_Intermediate_File_Format_ChangeLog.html</a>)</li>
+
+</ul>
+
+</ul>
+
+
+
+<h2 id="subject_note">注意事項</h2>
+
+<h3>マルチスレッドでの動作について</h3>
+
+<p>
+NITRO-System ライブラリは、基本的にスレッドセーフ（マルチスレッドに対応した形）に設計されていません。
+このため、NITRO-System の各ライブラリのAPI を割り込みハンドラや異なるスレッドから呼び出した場合、
+正常に動作しない可能性があります。
+</p>
+<p>
+ただし、サウンドドライバ(SND)の関数はスレッドセーフですので、
+割り込みハンドラや異なるスレッドから呼び出すことができます。
+</p>
+
+
+<h3>除算器の使用について</h3>
+
+<p>
+NITRO-System のG2D およびG3D ライブラリでは除算器を使用しています。
+そのため、割り込み処理内で除算器の状態の退避/復元を行わずにNITRO-System を使用しますと、
+割り込み元の演算結果を破壊してしまう可能性があります。
+</p>
+<p>
+割り込み処理でNITRO-System を使用する場合には、NITRO-SDK のCP_SaveContext(),
+CP_RestoreContext() を使用して、除算器の状態を退避・復元するようにしてください。
+</p>
+
+<h3>サンプルの画像データや音楽データについて</h3>
+
+<p>
+このパッケージに含まれるデモプログラムやサンプルプログラム等で使用されています画像データや音楽データの著作権は、
+任天堂株式会社に有ります。
+これらのデータは、デモプログラムやサンプルプログラム以外ではご使用頂けませんのでご了承ください。
+</p>
+
+
+<h3>フォントのライセンスについて</h3>
+
+<p>
+NINTENDO NITRO-System ライブラリ２００５年６月６日版以降には、フォントコンバータfontcvtr が集録されています。
+このfontcvtr を使用しますと、PC にインストールされている任意のフォントをニンテンドーDS で利用できるようなりますが、
+これらのフォントを利用したソフトを発売するには、利用するフォントのライセンスが必要になります。
+各ゲームソフトごとに適切なライセンスを取得してください。
+fontcvtr およびNITRO-System にはLC フォントを含め、いかなるフォントのライセンスも付属しません。
+</p>
+
+
+<h3>Xerces-C++について</h3>
+<p>
+	このパッケージには、Apache Software Foundation (http://www.apache.org/) により開発されたソフトウェアが組み込まれています。
+	Xerces-C++のNOTICEファイルとライセンスファイルのコピーは、下記のディレクトリに収録しています。
+</p>
+<ul>
+	<li><a href="./Xerces-C++/NOTICE">NintendoWare/Revolution/Documents/Xerces-C++/NOTICE</a>
+	<li><a href="./Xerces-C++/LICENSE">NintendoWare/Revolution/Documents/Xerces-C++/LICENSE</a>
+</ul>
+
+<div class="licence" style="width:64em">
+<pre>
+
+                                 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+   1. Definitions.
+
+      "License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+
+      "Licensor" shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
+
+      "Legal Entity" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      "control" means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the
+      outstanding shares, or (iii) beneficial ownership of such entity.
+
+      "You" (or "Your") shall mean an individual or Legal Entity
+      exercising permissions granted by this License.
+
+      "Source" form shall mean the preferred form for making modifications,
+      including but not limited to software source code, documentation
+      source, and configuration files.
+
+      "Object" form shall mean any form resulting from mechanical
+      transformation or translation of a Source form, including but
+      not limited to compiled object code, generated documentation,
+      and conversions to other media types.
+
+      "Work" shall mean the work of authorship, whether in Source or
+      Object form, made available under the License, as indicated by a
+      copyright notice that is included in or attached to the work
+      (an example is provided in the Appendix below).
+
+      "Derivative Works" shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Work and for which the
+      editorial revisions, annotations, elaborations, or other modifications
+      represent, as a whole, an original work of authorship. For the purposes
+      of this License, Derivative Works shall not include works that remain
+      separable from, or merely link (or bind by name) to the interfaces of,
+      the Work and Derivative Works thereof.
+
+      "Contribution" shall mean any work of authorship, including
+      the original version of the Work and any modifications or additions
+      to that Work or Derivative Works thereof, that is intentionally
+      submitted to Licensor for inclusion in the Work by the copyright owner
+      or by an individual or Legal Entity authorized to submit on behalf of
+      the copyright owner. For the purposes of this definition, "submitted"
+      means any form of electronic, verbal, or written communication sent
+      to the Licensor or its representatives, including but not limited to
+      communication on electronic mailing lists, source code control systems,
+      and issue tracking systems that are managed by, or on behalf of, the
+      Licensor for the purpose of discussing and improving the Work, but
+      excluding communication that is conspicuously marked or otherwise
+      designated in writing by the copyright owner as "Not a Contribution."
+
+      "Contributor" shall mean Licensor and any individual or Legal Entity
+      on behalf of whom a Contribution has been received by Licensor and
+      subsequently incorporated within the Work.
+
+   2. Grant of Copyright License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      copyright license to reproduce, prepare Derivative Works of,
+      publicly display, publicly perform, sublicense, and distribute the
+      Work and such Derivative Works in Source or Object form.
+
+   3. Grant of Patent License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      (except as stated in this section) patent license to make, have made,
+      use, offer to sell, sell, import, and otherwise transfer the Work,
+      where such license applies only to those patent claims licensable
+      by such Contributor that are necessarily infringed by their
+      Contribution(s) alone or by combination of their Contribution(s)
+      with the Work to which such Contribution(s) was submitted. If You
+      institute patent litigation against any entity (including a
+      cross-claim or counterclaim in a lawsuit) alleging that the Work
+      or a Contribution incorporated within the Work constitutes direct
+      or contributory patent infringement, then any patent licenses
+      granted to You under this License for that Work shall terminate
+      as of the date such litigation is filed.
+
+   4. Redistribution. You may reproduce and distribute copies of the
+      Work or Derivative Works thereof in any medium, with or without
+      modifications, and in Source or Object form, provided that You
+      meet the following conditions:
+
+      (a) You must give any other recipients of the Work or
+          Derivative Works a copy of this License; and
+
+      (b) You must cause any modified files to carry prominent notices
+          stating that You changed the files; and
+
+      (c) You must retain, in the Source form of any Derivative Works
+          that You distribute, all copyright, patent, trademark, and
+          attribution notices from the Source form of the Work,
+          excluding those notices that do not pertain to any part of
+          the Derivative Works; and
+
+      (d) If the Work includes a "NOTICE" text file as part of its
+          distribution, then any Derivative Works that You distribute must
+          include a readable copy of the attribution notices contained
+          within such NOTICE file, excluding those notices that do not
+          pertain to any part of the Derivative Works, in at least one
+          of the following places: within a NOTICE text file distributed
+          as part of the Derivative Works; within the Source form or
+          documentation, if provided along with the Derivative Works; or,
+          within a display generated by the Derivative Works, if and
+          wherever such third-party notices normally appear. The contents
+          of the NOTICE file are for informational purposes only and
+          do not modify the License. You may add Your own attribution
+          notices within Derivative Works that You distribute, alongside
+          or as an addendum to the NOTICE text from the Work, provided
+          that such additional attribution notices cannot be construed
+          as modifying the License.
+
+      You may add Your own copyright statement to Your modifications and
+      may provide additional or different license terms and conditions
+      for use, reproduction, or distribution of Your modifications, or
+      for any such Derivative Works as a whole, provided Your use,
+      reproduction, and distribution of the Work otherwise complies with
+      the conditions stated in this License.
+
+   5. Submission of Contributions. Unless You explicitly state otherwise,
+      any Contribution intentionally submitted for inclusion in the Work
+      by You to the Licensor shall be under the terms and conditions of
+      this License, without any additional terms or conditions.
+      Notwithstanding the above, nothing herein shall supersede or modify
+      the terms of any separate license agreement you may have executed
+      with Licensor regarding such Contributions.
+
+   6. Trademarks. This License does not grant permission to use the trade
+      names, trademarks, service marks, or product names of the Licensor,
+      except as required for reasonable and customary use in describing the
+      origin of the Work and reproducing the content of the NOTICE file.
+
+   7. Disclaimer of Warranty. Unless required by applicable law or
+      agreed to in writing, Licensor provides the Work (and each
+      Contributor provides its Contributions) on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+      implied, including, without limitation, any warranties or conditions
+      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+      PARTICULAR PURPOSE. You are solely responsible for determining the
+      appropriateness of using or redistributing the Work and assume any
+      risks associated with Your exercise of permissions under this License.
+
+   8. Limitation of Liability. In no event and under no legal theory,
+      whether in tort (including negligence), contract, or otherwise,
+      unless required by applicable law (such as deliberate and grossly
+      negligent acts) or agreed to in writing, shall any Contributor be
+      liable to You for damages, including any direct, indirect, special,
+      incidental, or consequential damages of any character arising as a
+      result of this License or out of the use or inability to use the
+      Work (including but not limited to damages for loss of goodwill,
+      work stoppage, computer failure or malfunction, or any and all
+      other commercial damages or losses), even if such Contributor
+      has been advised of the possibility of such damages.
+
+   9. Accepting Warranty or Additional Liability. While redistributing
+      the Work or Derivative Works thereof, You may choose to offer,
+      and charge a fee for, acceptance of support, warranty, indemnity,
+      or other liability obligations and/or rights consistent with this
+      License. However, in accepting such obligations, You may act only
+      on Your own behalf and on Your sole responsibility, not on behalf
+      of any other Contributor, and only if You agree to indemnify,
+      defend, and hold each Contributor harmless for any liability
+      incurred by, or claims asserted against, such Contributor by reason
+      of your accepting any such warranty or additional liability.
+
+   END OF TERMS AND CONDITIONS
+
+   APPENDIX: How to apply the Apache License to your work.
+
+      To apply the Apache License to your work, attach the following
+      boilerplate notice, with the fields enclosed by brackets "[]"
+      replaced with your own identifying information. (Don't include
+      the brackets!)  The text should be enclosed in the appropriate
+      comment syntax for the file format. We also recommend that a
+      file or class name and description of purpose be included on the
+      same "printed page" as the copyright notice for easier
+      identification within third-party archives.
+
+   Copyright [yyyy] [name of copyright owner]
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+</pre>
+</div>
+
+<div class="licence" style="width:27em">
+<pre>
+&copy; 2005-2008 Nintendo
+&copy; 2005-2008 HAL Laboratory, Inc.
+  
+任天堂株式会社の許諾を得ることなく、本書に記載
+されている内容の一部あるいは全部を無断で複製・
+複写・転写・頒布・貸与することを禁じます。
+</pre>
+</div>
+
+</body>
+</html>

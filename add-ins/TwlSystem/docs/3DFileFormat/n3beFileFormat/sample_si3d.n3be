@@ -1,0 +1,16 @@
+# NNS_Batch_Export
+
+# export animation data
+input_folder  "Animation_Database"
+output_folder "D:/data/nitro_3d_data"Å@
+n3es_folder   "D:/data/n3es" 
+n3es          "ica_settings.n3es"
+scene  "model_walk"
+scene  "model_run"
+scene  "model_jump"
+scene  "model_punch"
+
+n3es   "ica_itp_settings.n3es"
+scene  "model_wait"
+scene  "model_down"
+
